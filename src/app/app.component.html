@@ -1,4 +1,121 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<!-----Campo para crear un estudiante---->
+<div>
+  <div class="row">
+    <h4>Ingrese los datos del estudiante</h4>
+    <div class="col">
+      <input class="form-control" type="text" [(ngModel)]="nuevo_estudiante" placeholder="Nombre">
+    </div>
+    <div class="col">
+      <input class="form-control" type="text" [(ngModel)]="n_lastname" placeholder="Apellido">
+    </div>
+    <div class="col">
+      <input class="form-control" type="text" [(ngModel)]="n_cc" placeholder="Cedula">
+    </div>
+    <div class="col">
+      <input class="form-control" type="text" [(ngModel)]="n_cel" placeholder="Celular">
+    </div>
+    <div class="col">
+      <button class="btn btn-primary" (click)="crearEstudiante()">Crear</button>
+    </div>
+  </div>
+</div>
+<br>
+
+<br>
+
+<!-------Itera la variable global 'libros' y cada elemento lo
+-- almacena en la variable 'objEstudiante'
+-->
+<hr>
+<div>
+  <div class="row">
+    <div class="col">
+      <h6>Nombre</h6>
+    </div>
+    <div class="col">
+      <h6>Apellido</h6>
+    </div>
+    <div class="col">
+      <h6>Cedula</h6>
+    </div>
+    <div class="col">
+      <h6>Celular</h6>
+    </div>
+    <div class="col-4">
+      <h6>ID</h6>
+    </div>
+  </div>
+  <div class="row" *ngFor="let item of estudiantes">
+    <div class="col">
+      {{item.name}}
+    </div>
+    <div class="col">
+      {{item.lastname}}
+    </div>
+    <div class="col">
+      {{item.cc}}
+    </div>
+    <div class="col">
+      {{item.celular}}
+    </div>
+    <div class="col">
+      {{item.id}}
+    </div>
+    <div class="col">
+      <button class="btn btn-danger" (click)="eliminarEstudiante(item)">Eliminar</button>
+      <button class="btn btn-primary" (click)="consultarEstudiante(item)">Consultar</button>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<!--Metodo consultar-->
+<hr>
+<div>
+  <h2>Consultar</h2>
+  {{name}}
+  <br>
+  {{lastname}}
+  <br>
+  {{cc}}
+  <br>
+  {{cel}}
+  <br>
+  {{id}}
+</div>
+<!-- Fin consultar-->
+<br>
+<br>
+<!--Metodo actualizar-->
+<hr>
+<div>
+  <div>
+    <div class="row">
+      <h2>Actualizar</h2>
+      <div class="col">
+        <input  class="form-control" type="text" [(ngModel)]="name" placeholder="Nombre" id="a">
+      </div>
+      <div class="col">
+        <input  class="form-control" type="text" [(ngModel)]="lastname" placeholder="Apellido"
+  id="b">
+      </div>
+      <div class="col">
+        <input class="form-control" type="text" [(ngModel)]="cc" placeholder="Cedula"
+  id="c">
+      </div>
+      <div class="col">
+        <input class="form-control" type="text" [(ngModel)]="cel" placeholder="Celular"
+  id="d">
+      </div>
+      <div class="col">
+        <input class="form-control" type="text" [(ngModel)]="id" placeholder="ID"
+  id="e">
+      </div>
+      <br>
+      <div class="col">
+        <button class="btn btn-primary" (click)="actualizarEstudiante()">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Fin metodo actualizar-->
