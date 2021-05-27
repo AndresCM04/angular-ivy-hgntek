@@ -62,7 +62,7 @@ export class AppComponent {
       this.nuevo_estudiante = '';
       this.n_lastname = '';
       this.n_cc = '';
-      this.n_cel = ''
+      this.n_cel = '';
     });
   }
   // Eliminar
