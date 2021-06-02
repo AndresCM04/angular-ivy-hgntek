@@ -103,18 +103,34 @@ export class AppComponent {
     this.n_correo = '';
     this.n_cc = '';
   }
-  nota = {id:null, title: null, description: null };
+  nota = { id: null, title: null, description: null };
   show_form = false;
+  editar = false;
   agregarNota() {
+    this.show_form = true;
+  }
+  verNota(nota) {
+    this.editar = true;
+    this.nota = nota;
     this.show_form = true;
   }
   cancelar() {
     this.show_form = false;
   }
   crearNota() {
-    this.nota.id = Date.now();
-    this.my_notes.push(this.nota);
-    this.show_form = false;
-    this.nota = {id:null, title: null, description: null };
+    if (this.editar) {
+      var me = this;
+      this.my_notes.forEach(function(el, i) {
+        if (el.id === me.nota.id) {
+          me.my_notes[i] = me.nota;
+        }
+      });
+      me.show_form = false;
+    } else {
+      this.nota.id = Date.now();
+      this.my_notes.push(this.nota);
+      this.show_form = false;
+      this.nota = { id: null, title: null, description: null };
+    }
   }
 }
