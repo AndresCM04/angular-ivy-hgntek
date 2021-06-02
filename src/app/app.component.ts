@@ -93,5 +93,9 @@ export class AppComponent {
       id: this.id
     };
     this.fireService.post(estudiante, estudiante.id);
+    this.nuevo_estudiante = '';
+    this.n_lastname = '';
+    this.n_cc = '';
+    this.n_cel = '';
   }
 }
