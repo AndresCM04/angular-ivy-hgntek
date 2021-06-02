@@ -80,17 +80,18 @@ export class AppComponent {
     this.lastname = item.lastname;
     this.cc = item.cc;
     this.cel = item.celular;
-    this.id = item.id
+    this.id = item.id;
   }
 
   // Actualizar
   actualizarEstudiante() {
     let estudiante: estudiante = {
-      name: this.name, 
+      name: this.name,
       lastname: this.lastname,
       cc: this.cc,
       celular: this.cel,
       id: this.id
     };
+    this.fireService.post(estudiante, estudiante.id);
   }
 }
