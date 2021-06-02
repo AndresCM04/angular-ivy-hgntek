@@ -22,6 +22,11 @@ export class AppComponent {
   public lastname: string;
   public correo: string;
   public cc: string;
+  public my_notes = [
+    { id: 1, title: 'Nota 1', description: 'Description for note 1' },
+    { id: 2, title: 'Nota 2', description: 'Description for note 2' },
+    { id: 3, title: 'Nota 3', description: 'Description for note 3' }
+  ];
 
   constructor(private fireService: FireService) {
     this.estudiantes = [];
@@ -97,5 +102,19 @@ export class AppComponent {
     this.n_lastname = '';
     this.n_correo = '';
     this.n_cc = '';
+  }
+  nota = {id:null, title: null, description: null };
+  show_form = false;
+  agregarNota() {
+    this.show_form = true;
+  }
+  cancelar() {
+    this.show_form = false;
+  }
+  crearNota() {
+    this.nota.id = Date.now();
+    this.my_notes.push(this.nota);
+    this.show_form = false;
+    this.nota = {id:null, title: null, description: null };
   }
 }
