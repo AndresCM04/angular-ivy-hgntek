@@ -98,6 +98,4 @@ export class AppComponent {
     this.n_correo = '';
     this.n_cc = '';
   }
-  crearNota(){
-  }
 }
