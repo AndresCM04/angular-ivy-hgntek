@@ -23,9 +23,9 @@ export class AppComponent {
   public celular: string;
   public cc: string;
   public my_notes = [
-    { id: 1, title: 'Nota 1', description: 'Description for note 1' },
-    { id: 2, title: 'Nota 2', description: 'Description for note 2' },
-    { id: 3, title: 'Nota 3', description: 'Description for note 3' }
+    { id: 1, title: 'Agregar nota', description: 'Primer corte' },
+    { id: 2, title: 'Agregar nota', description: 'Segundo corte' },
+    { id: 3, title: 'Agregar nota', description: 'Tercer corte' }
   ];
 
   constructor(private fireService: FireService) {
@@ -115,12 +115,22 @@ export class AppComponent {
     this.show_form = true;
   }
   verNota(nota) {
-    this.editar = true;
+    this.editar =false;
     this.nota = nota;
     this.show_form = true;
   }
   cancelar() {
     this.show_form = false;
+  }
+  eliminar() {
+    var me = this;
+    this.my_notes.forEach(function(el, i) {
+      if (el == me.nota) {
+        me.my_notes.splice(i, 1);
+      }
+    });
+    this.show_form = false;
+    this.nota = { id: null, title: null, description: null };
   }
   crearNota() {
     if (this.editar) {

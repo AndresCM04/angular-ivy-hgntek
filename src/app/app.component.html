@@ -96,12 +96,16 @@
       <input class="form-control" type="text" placeholder="Titulo de la nota" [(ngModel)]="nota.title" />
       <textarea class="form-control" placeholder="Cuerpo de la nota" [(ngModel)]="nota.description"></textarea>
       <div class="row">
-        <br>
         <div class="col">
-          <a class="btn btn-danger" (click)="cancelar()">Cancelar</a>
+          <br>
+          <a class="btn btn-danger" (click)="eliminar()">Eliminar</a>
         </div>
-        <br>
         <div class="col">
+          <br>
+          <a class="btn btn-secondary" (click)="cancelar()">Cancelar</a>
+        </div>
+        <div class="col">
+          <br>
           <a class="btn btn-primary" (click)="crearNota()">Guardar nota</a>
         </div>
       </div>
