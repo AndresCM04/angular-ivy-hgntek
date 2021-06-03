@@ -115,7 +115,7 @@ export class AppComponent {
     this.show_form = true;
   }
   verNota(nota) {
-    this.editar =false;
+    this.editar = true;
     this.nota = nota;
     this.show_form = true;
   }
