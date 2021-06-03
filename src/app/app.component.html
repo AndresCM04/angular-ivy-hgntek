@@ -98,7 +98,7 @@
       <div class="row">
         <div class="col">
           <br>
-          <a class="btn btn-danger" (click)="eliminar()">Eliminar</a>
+          <a class="btn btn-danger" (click)="eliminar()" *ngIf="editar">Eliminar</a>
         </div>
         <div class="col">
           <br>

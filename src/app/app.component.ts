@@ -23,9 +23,9 @@ export class AppComponent {
   public celular: string;
   public cc: string;
   public my_notes = [
-    { id: 1, title: 'Agregar nota', description: 'Primer corte' },
-    { id: 2, title: 'Agregar nota', description: 'Segundo corte' },
-    { id: 3, title: 'Agregar nota', description: 'Tercer corte' }
+    { id: 1, title: '', description: 'Primer corte' },
+    { id: 2, title: '', description: 'Segundo corte' },
+    { id: 3, title: '', description: 'Tercer corte' }
   ];
 
   constructor(private fireService: FireService) {
