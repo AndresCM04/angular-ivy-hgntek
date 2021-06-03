@@ -2,6 +2,6 @@ export interface estudiante {
   id?: string;
   name: string;
   lastname: string;
-  correo: string;
+  celular: string;
   cc: string;
 }

@@ -14,13 +14,13 @@ export class AppComponent {
   public estudiantes: estudiante[];
   public nuevo_estudiante: string;
   public n_lastname: string;
-  public n_correo: string;
+  public n_celular: string;
   public n_cc: string;
   public estudiante: estudiante = null;
   public name: string;
   public id: string;
   public lastname: string;
-  public correo: string;
+  public celular: string;
   public cc: string;
   public my_notes = [
     { id: 1, title: 'Nota 1', description: 'Description for note 1' },
@@ -34,11 +34,11 @@ export class AppComponent {
     this.getEstudiante();
     this.name = '';
     this.id = '';
-    this.n_correo = '';
+    this.n_celular = '';
     this.n_cc = '';
     this.n_lastname = '';
     this.lastname = '';
-    this.correo = '';
+    this.celular = '';
     this.cc = '';
   }
 
@@ -60,13 +60,13 @@ export class AppComponent {
     let estudiante: estudiante = {
       name: this.nuevo_estudiante,
       lastname: this.n_lastname,
-      correo: this.n_correo,
+      celular: this.n_celular,
       cc: this.n_cc
     };
     this.fireService.post(estudiante, estudiante.id).then(resp => {
       this.nuevo_estudiante = '';
       this.n_lastname = '';
-      this.n_correo = '';
+      this.n_celular = '';
       this.n_cc = '';
     });
   }
@@ -83,7 +83,7 @@ export class AppComponent {
   consultarEstudiante(item: estudiante) {
     this.name = item.name;
     this.lastname = item.lastname;
-    this.correo = item.correo;
+    this.celular = item.celular;
     this.cc = item.cc;
     this.id = item.id;
   }
@@ -93,14 +93,14 @@ export class AppComponent {
     let estudiante: estudiante = {
       name: this.name,
       lastname: this.lastname,
-      correo: this.correo,
+      celular: this.celular,
       cc: this.cc,
       id: this.id
     };
     this.fireService.post(estudiante, estudiante.id);
     this.nuevo_estudiante = '';
     this.n_lastname = '';
-    this.n_correo = '';
+    this.n_celular = '';
     this.n_cc = '';
   }
   nota = { id: null, title: null, description: null };
