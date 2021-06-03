@@ -99,9 +99,14 @@ export class AppComponent {
     };
     this.fireService.post(estudiante, estudiante.id);
     this.nuevo_estudiante = '';
+    this.name = '';
     this.n_lastname = '';
+    this.lastname = '';
     this.n_celular = '';
+    this.celular = '';
     this.n_cc = '';
+    this.cc = '';
+    this.id = '';
   }
   nota = { id: null, title: null, description: null };
   show_form = false;
