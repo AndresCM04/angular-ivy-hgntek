@@ -108,6 +108,7 @@ export class AppComponent {
     this.cc = '';
     this.id = '';
   }
+  //Notas
   nota = { id: null, title: null, description: null };
   show_form = false;
   editar = false;
